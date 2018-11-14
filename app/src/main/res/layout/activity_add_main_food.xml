@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddMainFoodActivity">
+
+    <ImageView
+        android:id="@+id/btnBackMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back_black_24dp"
+        android:layout_margin="10dp"
+
+        />
+
+    <ImageView
+
+        android:layout_width="150dp"
+        android:layout_height="180dp"
+        android:id="@+id/imgAddMainFood"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Tên"/>
+        <EditText
+            android:id="@+id/edtAddTenMainF"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_marginRight="20dp"
+            android:layout_height="wrap_content"
+            style="@style/EditText.Login"
+            android:theme="@style/EditText.Login"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"
+            android:text="Địa Chỉ"/>
+        <EditText
+            android:id="@+id/edtAddDiaChiMainF"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            style="@style/EditText.Login"
+            android:theme="@style/EditText.Login"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"
+            android:text="Giá"/>
+        <EditText
+            android:layout_width="0dp"
+            android:id="@+id/edtAddGiaMainF"
+            android:layout_weight="3"
+            android:layout_marginRight="20dp"
+            android:layout_height="wrap_content"
+            style="@style/EditText.Login"
+            android:theme="@style/EditText.Login"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"
+            android:text="Điện thoại"/>
+        <EditText
+            android:id="@+id/edtAddDTMainF"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_marginRight="20dp"
+            android:layout_height="wrap_content"
+            style="@style/EditText.Login"
+            android:theme="@style/EditText.Login"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAddMainFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thêm"
+        android:textAllCaps="false"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"/>
+</LinearLayout>
