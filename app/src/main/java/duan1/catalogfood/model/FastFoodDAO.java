@@ -18,10 +18,11 @@ public class FastFoodDAO {
     public static final String FF_COLUMN_DIACHI = "DiaChi";
     public static final String FF_COLUMN_DIENTHOAI = "DienThoai";
     public static final String FF_COLUMN_GIA = "Gia";
+    public static final String FF_COLUMN_ANH="Image";
     public static final String CREATE_TABLE_FASTFOOD = "Create table " + TABLE_FAST_FOOD + "(" + FF_COLUMN_NAME + " VARCHAR(50)PRIMARY KEY NOT NULL, "
             + FF_COLUMN_DIACHI + " VARCHAR(50), "
             + FF_COLUMN_DIENTHOAI + " int, "
-            + FF_COLUMN_GIA + " INT)";
+            + FF_COLUMN_GIA + " INT, "+FF_COLUMN_ANH  +" BLOB )";
     public static final String TAG = "Fast Food Dao";
 
 
@@ -36,6 +37,7 @@ public class FastFoodDAO {
         values.put(FF_COLUMN_DIACHI, ff.getDiachi());
         values.put(FF_COLUMN_DIENTHOAI, ff.getDienthoai());
         values.put(FF_COLUMN_GIA, ff.getGia());
+        values.put(FF_COLUMN_ANH,ff.getAnh());
         try {
             if (db.insert(TABLE_FAST_FOOD, null, values) == -1) {
                 return -1;
@@ -52,6 +54,7 @@ public class FastFoodDAO {
         values.put(FF_COLUMN_DIACHI, ff.getDiachi());
         values.put(FF_COLUMN_DIENTHOAI, ff.getDienthoai());
         values.put(FF_COLUMN_GIA, ff.getGia());
+        values.put(FF_COLUMN_ANH,ff.getAnh());
         int result = db.update(TABLE_FAST_FOOD, values, "id=?", new String[]{ff.getName()});
         if (result == 0) {
             return -1;
@@ -71,6 +74,7 @@ public class FastFoodDAO {
             ff.setDiachi(c.getString(1));
             ff.setDienthoai(c.getString(2));
             ff.setGia(c.getString(3));
+            ff.setAnh(c.getBlob(4));
             dsFasrfood.add(ff);
             Log.d("//=====", ff.toString());
             c.moveToNext();

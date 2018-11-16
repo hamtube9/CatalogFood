@@ -2,6 +2,11 @@ package duan1.catalogfood.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +18,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import duan1.catalogfood.ChangeInfoFastFoodActivity;
 import duan1.catalogfood.R;
 import duan1.catalogfood.model.FastFood;
 import duan1.catalogfood.model.FastFoodDAO;
@@ -56,12 +62,15 @@ public class FastFoodAdapter extends BaseAdapter implements Filterable {
         if(view == null){
             holder = new ViewHolder();
             view = inflater.inflate(R.layout.item_list_fastfood,viewGroup,false);
-//            holder.imgFastFood=view.findViewById(R.id.imgFastFood);
+            holder.imgFastFood=view.findViewById(R.id.imgFastFood);
             holder.tvName = view.findViewById(R.id.tvTenFastFood);
             holder.tvAddress = view.findViewById(R.id.tvDiaChiFastFood);
             holder.tvPhone = view.findViewById(R.id.tvDTFastFood);
             holder.tvPrice = view.findViewById(R.id.tvGiaFastFood);
             view.setTag(holder);
+
+
+
         }else
             holder = (ViewHolder) view.getTag();
 
@@ -70,6 +79,10 @@ public class FastFoodAdapter extends BaseAdapter implements Filterable {
         holder.tvAddress.setText(ffood.getDiachi());
         holder.tvPhone.setText(ffood.getDienthoai());
         holder.tvPrice.setText(ffood.getGia());
+
+        byte[] img = FFList.get(position).getAnh();
+        Bitmap imgBitmap = BitmapFactory.decodeByteArray(img, 0, img.length);
+        holder.imgFastFood.setImageBitmap(imgBitmap);
         return view;
 
     }
@@ -81,7 +94,7 @@ public class FastFoodAdapter extends BaseAdapter implements Filterable {
 
     public static class ViewHolder {
         TextView tvName, tvAddress, tvPrice, tvPhone;
-//        ImageView imgFastFood;
+        ImageView imgFastFood;
     }
     public void changeDataset(List<FastFood> items) {
         this.FFList = items;

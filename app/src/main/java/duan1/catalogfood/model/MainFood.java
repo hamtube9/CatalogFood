@@ -1,8 +1,8 @@
 package duan1.catalogfood.model;
 
 public class MainFood {
-    private String name, diachi, gia, dienthoai,anh;
-
+    private String name, diachi, gia, dienthoai;
+    private byte[] anh;
     public String getGia() {
         return gia;
     }
@@ -19,21 +19,15 @@ public class MainFood {
         this.dienthoai = dienthoai;
     }
 
-    public String getAnh() {
-        return anh;
-    }
 
-    public void setAnh(String anh) {
-        this.anh = anh;
-    }
 
-    public MainFood(String name, String diachi, String gia, String dienthoai, String anh) {
+    public MainFood(String name, String diachi, String gia, String dienthoai) {
 
         this.name = name;
         this.diachi = diachi;
         this.gia = gia;
         this.dienthoai = dienthoai;
-        this.anh = anh;
+
     }
 
     public String getName() {

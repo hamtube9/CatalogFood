@@ -1,8 +1,9 @@
 package duan1.catalogfood.model;
 
 public class FastFood {
-    private String name,diachi,anh;
+    private String name,diachi;
     private String gia,dienthoai;
+    private byte[] anh;
     public FastFood() {
 
     }
@@ -39,20 +40,23 @@ public class FastFood {
         this.dienthoai = dienthoai;
     }
 
-    public String getAnh() {
+
+    public byte[] getAnh() {
         return anh;
     }
 
-    public void setAnh(String anh) {
+    public void setAnh(byte[] anh) {
         this.anh = anh;
     }
 
-    public FastFood(String name, String diachi, String anh, String gia, String dienthoai) {
+    public FastFood(String name, String diachi, String gia, String dienthoai, byte[] anh) {
 
         this.name = name;
         this.diachi = diachi;
-        this.anh = anh;
         this.gia = gia;
         this.dienthoai = dienthoai;
+        this.anh = anh;
     }
+
+
 }
