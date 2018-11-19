@@ -62,7 +62,7 @@ public class MainFoodAdapter extends BaseAdapter implements Filterable {
         final ViewHolder holder;
         if (convertView==null){
             holder=new ViewHolder();
-            convertView=layoutInflater.inflate(R.layout.item_list_mainfood,parent);
+            convertView=layoutInflater.inflate(R.layout.item_list_mainfood,parent,false);
             holder.imgMainFood=convertView.findViewById(R.id.imgMainFood);
             holder.tvName = convertView.findViewById(R.id.tvTenMainFood);
             holder.tvAddress = convertView.findViewById(R.id.tvDiaChiMainFood);

@@ -69,40 +69,28 @@ public class MainFoodDAO {
 
     }
 
-//    public MainFood getMainFood(String name) {
-//        MainFood mainFood = null;
-//        SQLiteDatabase sqLiteDatabase = helper.getWritableDatabase();
-//        Cursor cursor = sqLiteDatabase.query(TABLE_MAIN_FOOD, new String[]{MF_COLUMN_NAME, MF_COLUMN_GIA, MF_COLUMN_DIACHI, MF_COLUMN_DIENTHOAI}, MF_COLUMN_NAME + "=?",
-//                new String[]{name}, null, null, null);
-//        if (cursor != null && cursor.moveToFirst()) {
-//            String ten = cursor.getString(cursor.getColumnIndex(MF_COLUMN_NAME));
-//            int gia = Integer.parseInt(cursor.getString(cursor.getColumnIndex(MF_COLUMN_GIA)));
-//            String diachi = cursor.getString(cursor.getColumnIndex(MF_COLUMN_DIACHI));
-//            int dienthoai = Integer.parseInt(cursor.getString(cursor.getColumnIndex(MF_COLUMN_DIENTHOAI)));
-//
-//            mainFood = new MainFood(ten, diachi,gia,dienthoai);
-//
-//        }
-//        return mainFood;
-//    }
 
     public List<MainFood> getMainFood(){
         List<MainFood> mainFoodList=new ArrayList<>();
 
         Cursor cursor=db.query(TABLE_MAIN_FOOD,null,null,null,null,null,null);
-         while (cursor.isAfterLast()){
+        cursor.moveToFirst();
+        while (cursor.isAfterLast() == false) {
+            MainFood mf=new MainFood();
+            mf.setName(cursor.getString(0));
+            mf.setDiachi(cursor.getString(1));
+            mf.setDienthoai(cursor.getString(2));
+            mf.setGia(cursor.getString(3));
+            mf.setAnh(cursor.getBlob(4));
+            mainFoodList.add(mf);
+            Log.d("//=====", mf.toString());
+            cursor.moveToNext();
+        }
+        cursor.close();
 
-               MainFood mf=new MainFood();
-               mf.setName(cursor.getString(0));
-               mf.setDiachi(cursor.getString(1));
-               mf.setDienthoai(cursor.getString(2));
-               mf.setGia(cursor.getString(3));
-               mf.setAnh(cursor.getBlob(4));
-               mainFoodList.add(mf);
-                Log.d("//=====", mf.toString());
-                cursor.moveToNext();
-                 }
-                 cursor.close();
+
+
+
         return mainFoodList;
     }
 

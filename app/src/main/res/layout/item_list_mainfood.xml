@@ -11,11 +11,13 @@
             android:id="@+id/imgMainFood"
             android:layout_width="0dp"
 
-            android:layout_weight="2"
+            android:layout_weight="3
+"
             android:layout_height="150dp" />
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_weight="2
+"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
@@ -53,30 +55,26 @@
                 android:id="@+id/tvTenMainFood"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="9dp"
-                style="@style/EditText.Login"
-                android:theme="@style/EditText.Login"/>
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="12dp"
+                />
             <TextView
                 android:id="@+id/tvDiaChiMainFood"
                 android:layout_width="match_parent"
-                android:layout_marginBottom="9dp"
+                android:layout_marginBottom="12dp"
                 android:layout_height="30dp"
-                style="@style/EditText.Login"
-                android:theme="@style/EditText.Login"/>
+                />
             <TextView
                 android:id="@+id/tvGiaMainFood"
                 android:layout_width="match_parent"
-                android:layout_marginBottom="9dp"
+                android:layout_marginBottom="12dp"
                 android:layout_height="30dp"
-                style="@style/EditText.Login"
-                android:theme="@style/EditText.Login"/>
+              />
             <TextView
                 android:id="@+id/tvDTMainFood"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                style="@style/EditText.Login"
-                android:theme="@style/EditText.Login"/>
+                />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

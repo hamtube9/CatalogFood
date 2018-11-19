@@ -23,19 +23,19 @@ import duan1.catalogfood.model.MainFoodDAO;
 
 public class MainFoodActivity extends AppCompatActivity {
     private Toolbar toolbarMF;
-    private ListView lvMainFood;
+    private ListView lv;
     private MainFoodAdapter mainFoodAdapter;
     private List<MainFood> mainFoodList;
     private MainFoodDAO mainFoodDAO;
-    private ImageView imgbtnBackMF;
+    private ImageView backMF;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_food);
        toolbarMF = findViewById(R.id.toolbarMainFood);
         setSupportActionBar(toolbarMF);
-        imgbtnBackMF=findViewById(R.id.imgbtnBackMF);
-        lvMainFood=findViewById(R.id.lvMainFood);
+        backMF=findViewById(R.id.imgbtnBackMF);
+        lv=findViewById(R.id.lvMainFood);
 
         mainFoodDAO=new MainFoodDAO(MainFoodActivity.this);
 
@@ -45,12 +45,13 @@ public class MainFoodActivity extends AppCompatActivity {
         }catch (Exception e){
             e.printStackTrace();
         }
-        lvMainFood.setAdapter(mainFoodAdapter);
+        lv.setAdapter(mainFoodAdapter);
 
-        imgbtnBackMF.setOnClickListener(new View.OnClickListener() {
+        backMF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainFoodActivity.this,MainActivity.class));
+                Intent intent=new Intent(MainFoodActivity.this,MainActivity.class);
+                startActivity(intent);
             }
         });
 
