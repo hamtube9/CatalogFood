@@ -6,8 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,8 +23,7 @@ import duan1.catalogfood.adapter.MainFoodAdapter;
 import duan1.catalogfood.database.DatabaseHelper;
 import duan1.catalogfood.model.FastFood;
 import duan1.catalogfood.model.FastFoodDAO;
-import duan1.catalogfood.model.MainFood;
-import duan1.catalogfood.model.MainFoodDAO;
+
 
 public class FastFoodActivity extends AppCompatActivity {
     private Toolbar toolbar;
@@ -65,6 +63,7 @@ public class FastFoodActivity extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+
                 AlertDialog.Builder builder = new AlertDialog.Builder(FastFoodActivity.this);
                 builder.setTitle(" Bạn muốn sửa hay xóa");
                 builder.setPositiveButton("Sửa", new DialogInterface.OnClickListener() {
@@ -87,9 +86,11 @@ public class FastFoodActivity extends AppCompatActivity {
 
                     }
                 });
+                builder.show();
             }
         });
     }
+
 
         @Override
         public boolean onCreateOptionsMenu (Menu menu){
@@ -119,6 +120,8 @@ public class FastFoodActivity extends AppCompatActivity {
             fastFoodList = fastFoodDAO.getFastFood();
             adapter.changeDataset(fastFoodList);
         }
+
+
 
     }
 

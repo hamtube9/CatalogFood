@@ -19,6 +19,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import duan1.catalogfood.ChangeInfoFastFoodActivity;
+import duan1.catalogfood.FastFoodActivity;
 import duan1.catalogfood.R;
 import duan1.catalogfood.model.FastFood;
 import duan1.catalogfood.model.FastFoodDAO;
@@ -31,6 +32,8 @@ public class FastFoodAdapter extends BaseAdapter implements Filterable {
     private FastFoodDAO FFDao;
 
     private final LayoutInflater inflater;
+
+
 
     public FastFoodAdapter(Activity context, List<FastFood> FFList) {
         super();
@@ -49,6 +52,7 @@ public class FastFoodAdapter extends BaseAdapter implements Filterable {
     @Override
     public Object getItem(int i) {
         return FFList.get(i);
+
     }
 
     @Override
@@ -71,19 +75,22 @@ public class FastFoodAdapter extends BaseAdapter implements Filterable {
 
 
 
+
         }else
             holder = (ViewHolder) view.getTag();
 
-        FastFood ffood = FFList.get(position);
-        holder.tvName.setText(ffood.getName());
-        holder.tvAddress.setText(ffood.getDiachi());
-        holder.tvPhone.setText(ffood.getDienthoai());
-        holder.tvPrice.setText(ffood.getGia());
+            FastFood ffood = FFList.get(position);
+            holder.tvName.setText(ffood.getName());
+            holder.tvAddress.setText(ffood.getDiachi());
+            holder.tvPhone.setText(ffood.getDienthoai());
+            holder.tvPrice.setText(ffood.getGia());
 
-        byte[] img = FFList.get(position).getAnh();
-        Bitmap imgBitmap = BitmapFactory.decodeByteArray(img, 0, img.length);
-        holder.imgFastFood.setImageBitmap(imgBitmap);
-        return view;
+            byte[] img = FFList.get(position).getAnh();
+            Bitmap imgBitmap = BitmapFactory.decodeByteArray(img, 0, img.length);
+            holder.imgFastFood.setImageBitmap(imgBitmap);
+            return view;
+
+
 
     }
 
