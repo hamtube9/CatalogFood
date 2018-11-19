@@ -7,15 +7,23 @@
     android:orientation="vertical"
     tools:context=".ChangeInfoMainFoodActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarMF"
+        android:layout_width="match_parent"
+        android:background="?attr/colorPrimary"
+
+        android:layout_height="?attr/actionBarSize"></android.support.v7.widget.Toolbar>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
         <ImageView
             android:id="@+id/imgChangeMainFood"
             android:layout_width="0dp"
             android:layout_weight="2"
-            android:layout_height="150dp" />
+            android:layout_height="150dp"
+            />
         <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -57,29 +65,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="8dp"
+                android:textSize="20dp"
                 android:layout_marginBottom="9dp"
-                style="@style/EditText.Login"
-                android:theme="@style/EditText.Login"/>
+                />
             <EditText
                 android:id="@+id/edtChangeDiaChiMainFood"
                 android:layout_width="match_parent"
                 android:layout_marginBottom="9dp"
                 android:layout_height="30dp"
-                style="@style/EditText.Login"
-                android:theme="@style/EditText.Login"/>
+                android:textSize="20dp"
+                />
             <EditText
+                android:textSize="20dp"
                 android:id="@+id/edtChangeGiaMainFood"
                 android:layout_width="match_parent"
                 android:layout_marginBottom="9dp"
                 android:layout_height="30dp"
-                style="@style/EditText.Login"
-                android:theme="@style/EditText.Login"/>
+               />
             <EditText
                 android:id="@+id/edtChangeDTMainFood"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                style="@style/EditText.Login"
-                android:theme="@style/EditText.Login"/>
+                android:textSize="20dp"
+               />
         </LinearLayout>
     </LinearLayout>
     <LinearLayout

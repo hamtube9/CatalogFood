@@ -34,7 +34,8 @@
         </activity>
         <activity android:name=".AddFastFoodActivity" />
         <activity android:name=".AddMainFoodActivity" />
-        <activity android:name=".ChangeInfoFastFoodActivity" />
+        <activity android:name=".ChangeInfoFastFoodActivity"
+            android:theme="@style/App" ></activity>
         <activity android:name=".ChangeInfoMainFoodActivity"></activity>
     </application>
 
