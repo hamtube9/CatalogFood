@@ -1,6 +1,11 @@
 package duan1.catalogfood;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +13,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 
 import duan1.catalogfood.model.MainFood;
 import duan1.catalogfood.model.MainFoodDAO;
@@ -17,7 +26,7 @@ public class AddMainFoodActivity extends AppCompatActivity {
     private ImageView btnBackMain,imageFood;
     private EditText edtAddDTMainF,edtAddGiaMainF,edtAddDiaChiMainF,edtAddTenMainF;
     private MainFoodDAO mainFoodDAO;
-    public static int pick_image=1;
+    public static final int PICK_IMAGE=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +51,7 @@ public class AddMainFoodActivity extends AppCompatActivity {
 
                 String dienthoai=edtAddDTMainF.getText().toString().trim();
                 if (validate()>0){
-                    MainFood mainFood=new MainFood(name,diachi,gia,dienthoai);
+                    MainFood mainFood=new MainFood(name,diachi,gia,dienthoai,ImageViewChange(imageFood));
                     if (mainFoodDAO.insertMainFood(mainFood)>0){
                         Toast.makeText(AddMainFoodActivity.this, "Add sucess", Toast.LENGTH_SHORT).show();
                         finish();
@@ -59,7 +68,7 @@ public class AddMainFoodActivity extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_PICK);
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(intent, pick_image);
+                startActivityForResult(intent, PICK_IMAGE);
             }
         });
     }
@@ -92,5 +101,34 @@ public class AddMainFoodActivity extends AppCompatActivity {
             return check;
         }
         return 1;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch(requestCode) {
+            case PICK_IMAGE:
+                if(resultCode == RESULT_OK){
+                    try {
+                        final Uri imageUri = data.getData();
+                        final InputStream imageStream = getContentResolver().openInputStream(imageUri);
+                        final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
+                        imageFood.setImageBitmap(selectedImage);
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+        }
+
+
+    }
+
+    private byte[] ImageViewChange(ImageView imageView) {
+        BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
+        Bitmap bitmap = drawable.getBitmap();
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        return stream.toByteArray();
     }
 }

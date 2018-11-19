@@ -2,6 +2,8 @@ package duan1.catalogfood.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
@@ -61,6 +63,7 @@ public class MainFoodAdapter extends BaseAdapter implements Filterable {
         if (convertView==null){
             holder=new ViewHolder();
             convertView=layoutInflater.inflate(R.layout.item_list_mainfood,parent);
+            holder.imgMainFood=convertView.findViewById(R.id.imgMainFood);
             holder.tvName = convertView.findViewById(R.id.tvTenMainFood);
             holder.tvAddress = convertView.findViewById(R.id.tvDiaChiMainFood);
             holder.tvPhone = convertView.findViewById(R.id.tvDTMainFood);
@@ -74,7 +77,12 @@ public class MainFoodAdapter extends BaseAdapter implements Filterable {
             holder.tvAddress.setText(mf.getDiachi());
             holder.tvPhone.setText(mf.getDienthoai());
             holder.tvPrice.setText(mf.getGia());
-            return convertView;
+
+        byte[] img = mainFoodList.get(position).getAnh();
+        Bitmap imgBitmap = BitmapFactory.decodeByteArray(img, 0, img.length);
+        holder.imgMainFood.setImageBitmap(imgBitmap);
+        return convertView;
+
 
 
     }
@@ -86,6 +94,7 @@ public class MainFoodAdapter extends BaseAdapter implements Filterable {
     }
     public static class ViewHolder {
         TextView tvName, tvAddress, tvPrice, tvPhone;
+        ImageView imgMainFood;
     }
     public void changeDataset(List<MainFood> items) {
         this.mainFoodList = items;

@@ -19,10 +19,11 @@ public class MainFoodDAO {
     public static final String MF_COLUMN_DIACHI = "DiaChi";
     public static final String MF_COLUMN_DIENTHOAI = "DienThoai";
     public static final String MF_COLUMN_GIA = "Gia";
+    public static final String MF_COLUMN_ANH="Image";
     public static final String CREATE_TABLE_MAINFOOD = "Create table " + TABLE_MAIN_FOOD + "(" + MF_COLUMN_NAME + " VARCHAR(50)PRIMARY KEY NOT NULL, "
             + MF_COLUMN_DIACHI + " VARCHAR(50), "
             + MF_COLUMN_DIENTHOAI + " int, "
-            + MF_COLUMN_GIA + " INT)";
+            + MF_COLUMN_GIA + " INT," +MF_COLUMN_ANH+" BLOB)";
     public static final String TAG = "Main Food Dao";
 
 
@@ -38,6 +39,7 @@ public class MainFoodDAO {
         values.put(MF_COLUMN_DIACHI, mf.getDiachi());
         values.put(MF_COLUMN_DIENTHOAI, mf.getDienthoai());
         values.put(MF_COLUMN_GIA, mf.getGia());
+        values.put(MF_COLUMN_ANH,mf.getAnh());
 
         try{
             if (db.insert(TABLE_MAIN_FOOD,null,values)==-1){
@@ -57,6 +59,7 @@ public class MainFoodDAO {
         values.put(MF_COLUMN_DIACHI, mf.getDiachi());
         values.put(MF_COLUMN_DIENTHOAI, mf.getDienthoai());
         values.put(MF_COLUMN_GIA, mf.getGia());
+        values.put(MF_COLUMN_ANH,mf.getAnh());
         int result = db.update(TABLE_MAIN_FOOD,values,"id=?",new String[]{mf.getName()});
         if (result==0){
             return -1;
@@ -94,6 +97,7 @@ public class MainFoodDAO {
                mf.setDiachi(cursor.getString(1));
                mf.setDienthoai(cursor.getString(2));
                mf.setGia(cursor.getString(3));
+               mf.setAnh(cursor.getBlob(4));
                mainFoodList.add(mf);
                 Log.d("//=====", mf.toString());
                 cursor.moveToNext();
