@@ -48,14 +48,14 @@ public class FastFoodDAO {
         return 1;
     }
 
-    public int updateFastFood(FastFood ff) {
+    public int updateFastFood(String name, String diachi, String dienthoai,String gia, byte[] anh) {
         ContentValues values = new ContentValues();
-        values.put(FF_COLUMN_NAME, ff.getName());
-        values.put(FF_COLUMN_DIACHI, ff.getDiachi());
-        values.put(FF_COLUMN_DIENTHOAI, ff.getDienthoai());
-        values.put(FF_COLUMN_GIA, ff.getGia());
-        values.put(FF_COLUMN_ANH,ff.getAnh());
-        int result = db.update(TABLE_FAST_FOOD, values, "id=?", new String[]{ff.getName()});
+        values.put(FF_COLUMN_NAME, name);
+        values.put(FF_COLUMN_DIACHI, diachi);
+        values.put(FF_COLUMN_DIENTHOAI, dienthoai);
+        values.put(FF_COLUMN_GIA, gia);
+        values.put(FF_COLUMN_ANH,anh);
+        int result = db.update(TABLE_FAST_FOOD, values, "Ten=?", new String[]{name});
         if (result == 0) {
             return -1;
         }
@@ -83,7 +83,7 @@ public class FastFoodDAO {
         return dsFasrfood;
     }
     public int deleteFastFood(String name) {
-        int result = db.delete(TABLE_FAST_FOOD, "id=?", new String[]{name});
+        int result = db.delete(TABLE_FAST_FOOD, "Ten=?", new String[]{name});
         if (result == 0)
             return -1;
         return 1;

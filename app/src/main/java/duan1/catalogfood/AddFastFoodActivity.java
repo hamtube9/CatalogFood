@@ -64,6 +64,7 @@ public class AddFastFoodActivity extends AppCompatActivity {
                 if(validate()>0){
 
                     FastFood fastFood = new FastFood(name,address,gia,sdt,ImageViewChange(imageFood));
+
                     if(fastFoodDAO.insertFastFood(fastFood)>0){
                         Toast.makeText(getApplicationContext(), "Add Successfull", Toast.LENGTH_SHORT).show();
                         finish();

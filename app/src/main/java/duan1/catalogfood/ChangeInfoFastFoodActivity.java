@@ -53,22 +53,32 @@ public class ChangeInfoFastFoodActivity extends AppCompatActivity {
                 startActivityForResult(intent, PICK_IMAGE);
             }
         });
+        btnHuyFF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edtChangeDiaChiFastFood.setText("");
+                edtChangeDTFastFood.setText("");
+                edtChangeGiaFastFood.setText("");
+                edtChangeTenFastFood.setText("");
+                ;
+            }
+        });
+
 
         btnChangeFF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name=edtChangeTenFastFood.toString().trim();
-                String dienthoai=edtChangeDTFastFood.toString().trim();
-                String gia=edtChangeGiaFastFood.toString().trim();
-                String diachi=edtChangeDiaChiFastFood.toString().trim();
+//                String name=edtChangeTenFastFood.toString().trim();
+//                String dienthoai=edtChangeDTFastFood.toString().trim();
+//                String gia=edtChangeGiaFastFood.toString().trim();
+//                String diachi=edtChangeDiaChiFastFood.toString().trim();
                 if(validate()>0){
 
-                    FastFood fastFood = new FastFood(name,diachi,gia,dienthoai,ImageViewChange(imgChangeFastFood));
-                    if (fastFoodDAO.updateFastFood(fastFood)>0){
-                        Toast.makeText(getApplicationContext(), "Change Successfull", Toast.LENGTH_SHORT).show();
+                    if (fastFoodDAO.updateFastFood(edtChangeTenFastFood.getText().toString(),edtChangeDiaChiFastFood.getText().toString(),
+                            edtChangeGiaFastFood.getText().toString(),edtChangeDTFastFood.getText().toString(),ImageViewChange(imgChangeFastFood))>0){
+                        Toast.makeText(ChangeInfoFastFoodActivity.this, "Success", Toast.LENGTH_SHORT).show();
                         finish();
                     }
-                    ;
 
 
                 }

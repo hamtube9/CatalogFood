@@ -82,6 +82,7 @@ public class FastFoodActivity extends AppCompatActivity {
 
                         fastFoodDAO.deleteFastFood(fastFoodList.get(position).getName());
                         fastFoodList.remove(position);
+                        adapter.notifyDataSetChanged();
 
 
                     }
