@@ -64,7 +64,6 @@ public class ChangeInfoFastFoodActivity extends AppCompatActivity {
             }
         });
 
-
         btnChangeFF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
