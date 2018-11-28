@@ -19,6 +19,7 @@
         <ImageView
             android:id="@+id/imgChangeFastFood"
             android:layout_width="0dp"
+            android:src="@mipmap/ic_launcher"
             android:layout_weight="2"
             android:layout_height="150dp" />
         <LinearLayout

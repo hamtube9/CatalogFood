@@ -60,7 +60,6 @@ public class ChangeInfoFastFoodActivity extends AppCompatActivity {
                 edtChangeDTFastFood.setText("");
                 edtChangeGiaFastFood.setText("");
                 edtChangeTenFastFood.setText("");
-                ;
             }
         });
 
@@ -72,7 +71,6 @@ public class ChangeInfoFastFoodActivity extends AppCompatActivity {
 //                String gia=edtChangeGiaFastFood.toString().trim();
 //                String diachi=edtChangeDiaChiFastFood.toString().trim();
                 if(validate()>0){
-
                     if (fastFoodDAO.updateFastFood(edtChangeTenFastFood.getText().toString(),edtChangeDiaChiFastFood.getText().toString(),
                             edtChangeGiaFastFood.getText().toString(),edtChangeDTFastFood.getText().toString(),ImageViewChange(imgChangeFastFood))>0){
                         Toast.makeText(ChangeInfoFastFoodActivity.this, "Success", Toast.LENGTH_SHORT).show();

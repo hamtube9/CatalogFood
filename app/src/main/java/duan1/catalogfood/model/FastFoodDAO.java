@@ -48,12 +48,12 @@ public class FastFoodDAO {
         return 1;
     }
 
-    public int updateFastFood(String name, String diachi, String dienthoai,String gia, byte[] anh) {
+    public int updateFastFood(String name, String diachi,String gia, String dienthoai, byte[] anh) {
         ContentValues values = new ContentValues();
         values.put(FF_COLUMN_NAME, name);
         values.put(FF_COLUMN_DIACHI, diachi);
-        values.put(FF_COLUMN_DIENTHOAI, dienthoai);
         values.put(FF_COLUMN_GIA, gia);
+        values.put(FF_COLUMN_DIENTHOAI, dienthoai);
         values.put(FF_COLUMN_ANH,anh);
         int result = db.update(TABLE_FAST_FOOD, values, "Ten=?", new String[]{name});
         if (result == 0) {

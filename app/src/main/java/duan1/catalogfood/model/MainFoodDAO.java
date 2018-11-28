@@ -52,15 +52,16 @@ public class MainFoodDAO {
 
     }
 
-    public long updateMainFood(MainFood mf) {
+    public long updateMainFood(String name, String diachi,String gia, String dienthoai, byte[] anh) {
 
         ContentValues values = new ContentValues();
-        values.put(MF_COLUMN_NAME, mf.getName());
-        values.put(MF_COLUMN_DIACHI, mf.getDiachi());
-        values.put(MF_COLUMN_DIENTHOAI, mf.getDienthoai());
-        values.put(MF_COLUMN_GIA, mf.getGia());
-        values.put(MF_COLUMN_ANH,mf.getAnh());
-        int result = db.update(TABLE_MAIN_FOOD,values,"id=?",new String[]{mf.getName()});
+        values.put(MF_COLUMN_NAME, name);
+        values.put(MF_COLUMN_DIACHI, diachi);
+        values.put(MF_COLUMN_GIA, gia);
+        values.put(MF_COLUMN_DIENTHOAI, dienthoai);
+
+        values.put(MF_COLUMN_ANH,anh);
+        int result = db.update(TABLE_MAIN_FOOD,values,"Ten=?",new String[]{name});
         if (result==0){
             return -1;
         }
@@ -95,7 +96,7 @@ public class MainFoodDAO {
     }
 
     public int deleteMainFood(String name){
-        int result= db.delete(TABLE_MAIN_FOOD,"id=?",new String[]{name});
+        int result= db.delete(TABLE_MAIN_FOOD,"Ten=?",new String[]{name});
         if (result==0){
             return -1;
         }

@@ -1,7 +1,9 @@
 package duan1.catalogfood;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -55,6 +58,36 @@ public class MainFoodActivity extends AppCompatActivity {
             }
         });
 
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainFoodActivity.this);
+                builder.setTitle(" Bạn muốn sửa hay xóa");
+                builder.setPositiveButton("Sửa", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(MainFoodActivity.this, ChangeInfoMainFoodActivity.class);
+                        startActivity(intent);
+
+
+                    }
+                });
+
+                builder.setNegativeButton("Xóa", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        mainFoodDAO.deleteMainFood(mainFoodList.get(position).getName());
+                        mainFoodList.remove(position);
+                        mainFoodAdapter.notifyDataSetChanged();
+
+
+                    }
+                });
+                builder.show();
+            }
+        });
     }
 
 
