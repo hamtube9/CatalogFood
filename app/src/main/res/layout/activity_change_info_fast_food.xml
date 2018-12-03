@@ -32,7 +32,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="35dp"
                 android:text="tên :"/>
@@ -40,18 +40,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="35dp"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="5dp"
                 android:text="địa chỉ :"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="35dp"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="5dp"
                 android:text="giá :"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="5dp"
                 android:text="điện thoại:"/>
         </LinearLayout>
         <LinearLayout

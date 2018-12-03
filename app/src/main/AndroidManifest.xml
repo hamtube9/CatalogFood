@@ -38,7 +38,11 @@
         <activity android:name=".AddFastFoodActivity" />
         <activity android:name=".AddMainFoodActivity" />
         <activity android:name=".ChangeInfoFastFoodActivity"
-            android:theme="@style/App" ></activity>
+            android:theme="@style/App" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ChangeInfoMainFoodActivity"
             android:theme="@style/App"></activity>
     </application>

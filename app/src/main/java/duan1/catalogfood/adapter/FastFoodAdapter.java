@@ -94,8 +94,6 @@ public class FastFoodAdapter extends BaseAdapter implements Filterable {
 
     }
 
-
-
     @Override
     public Filter getFilter() {
         return null;
