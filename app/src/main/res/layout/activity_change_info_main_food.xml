@@ -22,6 +22,7 @@
         <ImageView
             android:id="@+id/imgChangeMainFood"
             android:layout_width="0dp"
+            android:layout_gravity="center_vertical"
             android:layout_height="150dp"
             android:layout_weight="2"
             android:src="@mipmap/ic_launcher"/>
@@ -36,29 +37,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="35dp"
                 android:text="tên :" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="40dp"
                 android:text="địa chỉ :" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="40dp"
                 android:text="giá :" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
-                android:text="điện thoại :" />
+                android:text="điện thoại:" />
         </LinearLayout>
 
         <LinearLayout
@@ -70,7 +71,8 @@
             <EditText
                 android:id="@+id/edtChangeTenMainFood"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
+
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="9dp"
                 android:textSize="20dp" />
@@ -78,21 +80,24 @@
             <EditText
                 android:id="@+id/edtChangeDiaChiMainFood"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
+
                 android:layout_marginBottom="9dp"
                 android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/edtChangeGiaMainFood"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
+
                 android:layout_marginBottom="9dp"
                 android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/edtChangeDTMainFood"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
+
                 android:textSize="20dp" />
         </LinearLayout>
     </LinearLayout>

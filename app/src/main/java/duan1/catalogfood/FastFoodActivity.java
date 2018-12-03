@@ -1,5 +1,7 @@
 package duan1.catalogfood;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.Nullable;
@@ -7,6 +9,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,7 +35,7 @@ public class FastFoodActivity extends AppCompatActivity {
     private FastFoodDAO fastFoodDAO;
     private FastFoodAdapter adapter;
     private List<FastFood> fastFoodList;
-
+    private SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,12 +99,45 @@ public class FastFoodActivity extends AppCompatActivity {
         @Override
         public boolean onCreateOptionsMenu (Menu menu){
             getMenuInflater().inflate(R.menu.main, menu);
-            return super.onCreateOptionsMenu(menu);
+
+            SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+            searchView = (SearchView) menu.findItem(R.id.action_search)
+                    .getActionView();
+            searchView.setSearchableInfo(searchManager
+                    .getSearchableInfo(getComponentName()));
+            searchView.setMaxWidth(Integer.MAX_VALUE);
+
+            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                @Override
+                public boolean onQueryTextSubmit(String s) {
+                    adapter.getFilter().filter(s);
+                    return false;
+                }
+
+                @Override
+                public boolean onQueryTextChange(String s) {
+                    adapter.getFilter().filter(s);
+                    return false;
+                }
+            });
+            return true;
         }
 
-        @Override
+    @Override
+    public void onBackPressed() {
+        if (!searchView.isIconified()) {
+            searchView.setIconified(true);
+            return;
+        }
+        super.onBackPressed();
+    }
+
+
+    @Override
         public boolean onOptionsItemSelected (MenuItem item){
             switch (item.getItemId()) {
+
+
                 case R.id.action_add:
                     Intent intent = new Intent(FastFoodActivity.this, AddFastFoodActivity.class);
                     startActivity(intent);

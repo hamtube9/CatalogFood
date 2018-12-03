@@ -12,6 +12,7 @@
         android:background="?attr/colorPrimary"
         android:layout_height="?attr/actionBarSize"></android.support.v7.widget.Toolbar>
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -19,6 +20,7 @@
         <ImageView
             android:id="@+id/imgChangeFastFood"
             android:layout_width="0dp"
+            android:layout_gravity="center_vertical"
             android:src="@mipmap/ic_launcher"
             android:layout_weight="2"
             android:layout_height="150dp" />
@@ -31,26 +33,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="35dp"
                 android:text="tên :"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="35dp"
                 android:layout_marginLeft="8dp"
                 android:text="địa chỉ :"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="35dp"
                 android:layout_marginLeft="8dp"
                 android:text="giá :"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
-                android:text="điện thoại :"/>
+                android:text="điện thoại:"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
@@ -62,7 +64,7 @@
                 android:id="@+id/edtChangeTenFastFood"
                 android:layout_width="match_parent"
 
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="9dp"
                 />
@@ -70,18 +72,21 @@
                 android:id="@+id/edtChangeDiaChiFastFood"
                 android:layout_width="match_parent"
                 android:layout_marginBottom="9dp"
-                android:layout_height="30dp"
+
+                android:layout_height="wrap_content"
                 />
             <EditText
                 android:id="@+id/edtChangeGiaFastFood"
                 android:layout_width="match_parent"
                 android:layout_marginBottom="9dp"
-                android:layout_height="30dp"
+
+                android:layout_height="wrap_content"
                 />
             <EditText
                 android:id="@+id/edtChangeDTFastFood"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+
+                android:layout_height="wrap_content"
                />
         </LinearLayout>
     </LinearLayout>

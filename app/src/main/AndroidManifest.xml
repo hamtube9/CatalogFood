@@ -27,11 +27,13 @@
         <activity android:name=".FastFoodActivity"
             android:theme="@style/AppTheme.NoActionBar" ></activity>
         <activity android:name=".HelloActivity" />
-        <activity android:name=".SearchActivity" >
+        <activity android:name=".SearchActivity"
             android:theme="@style/App"
-            <intent-filter>
-                <action android:name="android.intent.action.SEARCH" />
-            </intent-filter>
+            >
+
+
+
+
         </activity>
         <activity android:name=".AddFastFoodActivity" />
         <activity android:name=".AddMainFoodActivity" />

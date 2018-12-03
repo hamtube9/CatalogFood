@@ -7,44 +7,21 @@
     android:layout_height="match_parent"
     tools:context=".SearchActivity">
 
-
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-
-       >
-
-        <ImageView
-            android:id="@+id/imgSearchBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_back_black_24dp"/>
-    </android.support.v7.widget.Toolbar>
-
-    <LinearLayout
+        android:id="@+id/toolBarSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp">
+        android:background="?attr/colorPrimary"></android.support.v7.widget.Toolbar>
 
-        <EditText
-            android:id="@+id/edtFind"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:hint="Search" />
 
-        <ImageView
-            android:id="@+id/btnFind"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@drawable/ic_search_black_24dp" />
 
-    </LinearLayout>
+ <android.support.v7.widget.SearchView
+     android:id="@+id/searchView"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"></android.support.v7.widget.SearchView>
 
  <ListView
+     android:layout_marginTop="50dp"
      android:id="@+id/lvFind"
      android:layout_width="match_parent"
      android:layout_height="match_parent"></ListView>

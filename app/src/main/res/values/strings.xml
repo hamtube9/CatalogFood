@@ -9,4 +9,5 @@
     <string name="empty">Không được để trống</string>
     <string name="length">Số điện thoại phải có 10 kí tự</string>
     <string name="price">Giá phải lơn hơn 0</string>
+    <string name="action_search">Search</string>
 </resources>
