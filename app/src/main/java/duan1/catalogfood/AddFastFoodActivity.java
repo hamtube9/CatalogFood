@@ -34,6 +34,7 @@ public class AddFastFoodActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_fast_food);
+
         initsView();
         btnBackFast.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,12 +93,12 @@ public class AddFastFoodActivity extends AppCompatActivity {
         if (edtAddTenFastF.getText().toString().equals("")) {
             edtAddTenFastF.setError(getString(R.string.empty));
             return check;
-        } else if (edtAddDiaChiFastF.getText().toString().equals("")) {
-            edtAddDiaChiFastF.setError(getString(R.string.empty));
-            return check;
-        } else if (edtAddDTFastF.getText().toString().length() != 10) {
-            edtAddDTFastF.setError(getString(R.string.length));
-            return check;
+//        } else if (edtAddDiaChiFastF.getText().toString().equals("")) {
+//            edtAddDiaChiFastF.setError(getString(R.string.empty));
+//            return check;
+//        } else if (edtAddDTFastF.getText().toString().length() != 10) {
+//            edtAddDTFastF.setError(getString(R.string.length));
+//            return check;
         } else if (Integer.parseInt(edtAddGiaFastF.getText().toString()) < 0) {
             edtAddGiaFastF.setError(getString(R.string.price));
             return check;

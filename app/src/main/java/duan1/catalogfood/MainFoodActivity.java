@@ -39,7 +39,7 @@ public class MainFoodActivity extends AppCompatActivity {
         setSupportActionBar(toolbarMF);
         backMF=findViewById(R.id.imgbtnBackMF);
         lv=findViewById(R.id.lvMainFood);
-
+        toolbarMF.setTitle("MainFood");
         mainFoodDAO=new MainFoodDAO(MainFoodActivity.this);
 
         try{

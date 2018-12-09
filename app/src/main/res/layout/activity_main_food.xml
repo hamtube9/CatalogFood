@@ -30,7 +30,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="8dp"
                 android:gravity="center_vertical"
-                android:text="Add Main Food"
+                android:text="MainFood"
                 android:textColor="#fff"
                 android:textSize="22sp" />
         </LinearLayout>

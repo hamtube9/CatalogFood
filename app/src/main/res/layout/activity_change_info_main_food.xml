@@ -25,7 +25,7 @@
             android:layout_gravity="center_vertical"
             android:layout_height="150dp"
             android:layout_weight="2"
-            android:src="@mipmap/ic_launcher"/>
+            android:src="@drawable/restaurant_36030_960_720"/>
 
         <LinearLayout
             android:layout_width="0dp"

@@ -35,6 +35,7 @@ public class ChangeInfoMainFoodActivity extends AppCompatActivity {
         setContentView(R.layout.activity_change_info_main_food);
         innitviews();
         setSupportActionBar(toolbar);
+        toolbar.setTitle("Change Infomation");
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

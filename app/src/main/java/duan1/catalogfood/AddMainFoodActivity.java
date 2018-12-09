@@ -90,12 +90,12 @@ public class AddMainFoodActivity extends AppCompatActivity {
         if (edtAddTenMainF.getText().toString().equals("")) {
             edtAddTenMainF.setError(getString(R.string.empty));
             return check;
-        } else if (edtAddDiaChiMainF.getText().toString().equals("")) {
-            edtAddDiaChiMainF.setError(getString(R.string.empty));
-            return check;
-        } else if (edtAddDTMainF.getText().toString().length() != 10) {
-            edtAddDTMainF.setError(getString(R.string.length));
-            return check;
+//        } else if (edtAddDiaChiMainF.getText().toString().equals("")) {
+//            edtAddDiaChiMainF.setError(getString(R.string.empty));
+//            return check;
+//        } else if (edtAddDTMainF.getText().toString().length() != 10) {
+//            edtAddDTMainF.setError(getString(R.string.length));
+//            return check;
         } else if (Integer.parseInt(edtAddGiaMainF.getText().toString()) < 0) {
             edtAddGiaMainF.setError(getString(R.string.price));
             return check;

@@ -45,7 +45,7 @@ public class FastFoodActivity extends AppCompatActivity {
         lv = findViewById(R.id.lvFastFood);
         backFF = findViewById(R.id.imgbtnBackFF);
         setSupportActionBar(toolbar);
-
+        toolbar.setTitle("FastFood");
         fastFoodDAO = new FastFoodDAO(FastFoodActivity.this);
         try {
             fastFoodList = fastFoodDAO.getFastFood();
